@@ -10,11 +10,8 @@
 			$(document).ready(function(){
 				$('#sendbnt').click(function(){
 					$.get(url,data,function(data){        //??? 不知道回傳的資料是什麼形式 ???
-						$('#content').text(data);})
-					.done(function(){
-					alert( "second success" );})
-					.fail(function(){
-					alert( "error" );});
+						$('#content').text(data);
+					});					
 				});
 			});
 		
