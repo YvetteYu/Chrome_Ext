@@ -1,0 +1,42 @@
+{
+  "manifest_version": 2,
+
+  "name": "求職掃雷器",
+  "description": "讓你更加了解這家公司",
+  "version": "1",
+
+  "background" : {
+      "scripts": ["show_company.js"]
+  },
+  "permissions": [
+      "http://jobhelper.g0v.ronny.tw/",
+      "http://www.104.com.tw/",
+      "http://www.ejob.gov.tw/",
+      "https://www.ejob.gov.tw/",
+      "http://www.104temp.com.tw/",
+      "http://www.1111.com.tw/",
+      "http://www.yes123.com.tw/",
+      "http://www.518.com.tw/",
+      "tabs",
+      "storage"
+  ],
+  "page_action" : {
+      "default_title" : "設定求職小幫手"  
+  },
+  "content_scripts" : [
+    {
+      "matches" : [
+        "http://www.104.com.tw/*",
+        "http://www.ejob.gov.tw/*",
+        "https://www.ejob.gov.tw/*",
+        "http://www.104temp.com.tw/*",
+	"http://www.1111.com.tw/*",
+	"http://www.yes123.com.tw/*",
+	"http://www.518.com.tw/*"
+      ],
+      "js" : ["jquery.min.js", "contentscript.js"],
+      "run_at" : "document_idle",
+      "all_frames" : false
+    }
+  ]
+}

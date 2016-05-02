@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script> 
+		<script> 
+		url = 'http://10.120.28.17:8000/blog/search/?name=%E6%97%A5%E5%95%86%2C%E6%A5%AD%E5%8B%99'
+		// url = 10.120.28.17:8000/blog/search/?name=日商%2C業務
+			$(document).ready(function(){
+				$('#sendbnt').click(function(){
+					$.get(url,data,function(data){        //??? 不知道回傳的資料是什麼形式 ???
+						$('#content').text(data);})
+					.done(function(){
+					alert( "second success" );})
+					.fail(function(){
+					alert( "error" );});
+				});
+			});
+		
+		</script>
+		<title> </title>
+	</head>
+	
+	<body>
+		<span id="sendbnt">
+		<button> send it!</button>
+		</span>
+		<div id="content"> </div>
+	</body>
+</html>
